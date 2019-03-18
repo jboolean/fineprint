@@ -65,7 +65,7 @@ section#aboveFold {
 .videoInnerContainer {
   /* all this stuff ensures the video fits vertically
   on wide screens */
-  max-width: 177vh;
+  max-width: calc(177vh - 100px);
   width: 100%;
   height: 100%;
 }
@@ -99,6 +99,33 @@ section#aboveFold {
 
 .videoVisible #selector a, #selector:hover a {
   opacity: 0.5;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+#selector a, h1 {
+  animation: 1s ease-in 0s 1 backwards fadein;
+}
+h1 {
+  animation-delay: 2s;
+}
+
+#selector a:nth-child(1) {
+  animation-delay: 500ms;
+}
+#selector a:nth-child(2) {
+  animation-delay: 1000ms;
+}
+#selector a:nth-child(3) {
+  animation-delay: 1500ms;
 }
 
 #selector:hover a:hover {
