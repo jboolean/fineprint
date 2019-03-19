@@ -14,11 +14,12 @@ h1 {
   font-family: pragmatica-extended, Arial, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 1em;
+  /* scales font between 1 and 2 ems depending on screen size */
+  font-size: calc(16px + (32 - 16) * ((100vw - 300px) / (1600 - 300)));
 
   text-transform: uppercase;
   line-height: 1.2em;
-  padding-left: 2em;
+  padding: 16px 32px;
 }
 
 .centerContainer {
@@ -28,7 +29,7 @@ h1 {
 }
 
 section {
-  padding: 1em 2em;
+  padding: 16px 32px;
 }
 
 section#aboveFold {
@@ -46,7 +47,6 @@ section#aboveFold {
 .selectorContainer {
   flex-grow: 1;
   flex-shrink: 1;
-  /* transition: flex-grow 200ms ease-in; */
 }
 
 .videoVisible .selectorContainer {
