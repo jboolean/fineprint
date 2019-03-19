@@ -211,4 +211,8 @@ h1 {
   .bodyLayout {
     display: block;
   }
+
+  .artistStatement {
+    margin-right: 0;
+  }
 }
