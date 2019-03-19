@@ -99,14 +99,25 @@ section#aboveFold {
 
 .videoVisible #selector a, #selector:hover a {
   opacity: 0.5;
+  animation: none !important;
 }
 
 @keyframes fadein {
-  0% {
+  from {
     opacity: 0;
   }
 
-  100% {
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
     opacity: 1
   }
 }
@@ -116,6 +127,14 @@ section#aboveFold {
 }
 h1 {
   animation-delay: 2s;
+}
+
+#selector a.fadeinEnded {
+  /* remove animation after ended
+  otherwise it iterferes with putting on another animation
+  if that animation is removed the fade in restarts from the beginning.
+  This fixes that. */
+  animation: none;
 }
 
 #selector a:nth-child(1) {
@@ -128,8 +147,12 @@ h1 {
   animation-delay: 1500ms;
 }
 
+.videoHidden #selector a.fadeinEnded:first-child {
+  animation: 1.5s ease-in-out 1s alternate-reverse infinite pulse;
+}
+
 #selector:hover a:hover {
-  opacity: 1
+  opacity: 1;
 }
 
 .forgivenessShown a#forgivenessLink {

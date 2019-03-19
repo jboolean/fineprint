@@ -33,11 +33,22 @@ const showVideo = (id) => {
   vimeoPlayer.play();
 }
 
+const addClassWhenAnimationEnded = (node, animationName) => {
+  node.addEventListener('animationend', (e) => {
+    if (e.animationName === animationName) {
+      e.target.classList.add(animationName + 'Ended');
+    }
+  })
+}
+
 const bind = () => {
   ids.forEach((id) => {
     document.getElementById(id + 'Link')
       .addEventListener('click', () => showVideo(id));
-  })
+  });
+
+  addClassWhenAnimationEnded(document.getElementById('selector'), 'fadein');
+
 };
 
 document.addEventListener('DOMContentLoaded', () => {
