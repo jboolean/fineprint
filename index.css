@@ -148,7 +148,7 @@ h1 {
 }
 
 .videoHidden #selector a.fadeinEnded:first-child {
-  animation: 1.5s ease-in-out 1s alternate-reverse infinite pulse;
+  animation: 1s ease-in-out 1s alternate-reverse infinite pulse;
 }
 
 #selector:hover a:hover {
