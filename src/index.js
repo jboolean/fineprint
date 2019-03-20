@@ -1,3 +1,5 @@
+import './index.css';
+
 const ids = ['forgiveness', 'hardship', 'default'];
 
 const videoUrlOptions = '?color=ffffff&title=0&byline=0&portrait=0'
