@@ -14,7 +14,6 @@ module.exports = {
   devServer: {
     contentBase: dist
   },
-  devtool: devMode ? 'inline-source-maps' : undefined,
   module: {
     rules: [
       { 
