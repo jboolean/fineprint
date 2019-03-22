@@ -3,13 +3,13 @@
 }
 
 .forgivenessShown .forgivenessContainer {
-  display: initial;
+  display: block;
 }
 
 .hardshipShown .hardshipContainer {
-  display: initial;
+  display: block;
 }
 
 .defaultShown .defaultContainer {
-  display: initial;
+  display: block;
 }
