@@ -1,0 +1,23 @@
+{
+  "extends": ["squarespace/vanilla"],
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "plugins": [
+  ],
+  "globals": {
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  },
+  "rules": {
+    "no-var": "error",
+    "prefer-const": "warn"
+  }
+}

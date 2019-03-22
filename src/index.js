@@ -7,7 +7,7 @@ const youtubeIds = {
   forgiveness: 'IGZBsOPALDo',
   hardship: 'CmH1BH-iCcw',
   default: 'JkxBccGqyXQ'
-}
+};
 const ids = Object.keys(youtubeIds);
 
 const renderVideoPlayer = (id, youtubeId) => {
@@ -20,7 +20,7 @@ const renderVideoPlayer = (id, youtubeId) => {
   videoContainer.appendChild(placeholder);
 
   titleNode.parentNode.insertBefore(videoContainer, titleNode);
-  
+
   const player = new YouTubePlayer(placeholder, {
     videoId: youtubeId,
     width: '100%',
@@ -30,7 +30,7 @@ const renderVideoPlayer = (id, youtubeId) => {
     }
   });
   return player;
-}
+};
 
 let players;
 const createPlayers = () => {
@@ -42,9 +42,9 @@ const createPlayers = () => {
 
 let activePlayer;
 const showVideo = (id) => {
-  var aboveFold = document.getElementById('aboveFold');
+  const aboveFold = document.getElementById('aboveFold');
   aboveFold.classList.remove('videoHidden');
-  const shownClasses = ids.map((id) => id + 'Shown');
+  const shownClasses = ids.map((vidId) => vidId + 'Shown');
   aboveFold.classList.remove('videoHidden', ...shownClasses);
   aboveFold.classList.add('videoVisible', id + 'Shown');
   if (activePlayer) {
@@ -52,15 +52,15 @@ const showVideo = (id) => {
   }
   players[id].playVideo();
   activePlayer = players[id];
-}
+};
 
 const addClassWhenAnimationEnded = (node, animationName) => {
   node.addEventListener('animationend', (e) => {
     if (e.animationName === animationName) {
       e.target.classList.add(animationName + 'Ended');
     }
-  })
-}
+  });
+};
 
 const bind = () => {
   ids.forEach((id) => {
