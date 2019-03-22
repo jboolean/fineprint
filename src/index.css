@@ -60,6 +60,11 @@ section#aboveFold {
   position: relative;
 }
 
+.videoContainer > iframe {
+  height: 100%;
+  position: absolute; /*needed by some browsers*/
+}
+
 #selector {
   width: 100%;
   display: flex;
