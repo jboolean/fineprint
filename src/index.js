@@ -26,7 +26,8 @@ const renderVideoPlayer = (id, youtubeId) => {
     width: '100%',
     height: '100%',
     playerVars: {
-      modestbranding: 1
+      modestbranding: 1,
+      rel: 0
     }
   });
   return player;
