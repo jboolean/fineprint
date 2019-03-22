@@ -7,7 +7,6 @@
   "scripts": {
     "build": "webpack --mode=production",
     "watch": "webpack-dev-server --mode=development",
-    "lint": "eslint --ext .js src",
     "lint": "eslint --ext .js --fix src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -56,6 +55,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.0",
+    "core-js": "^3.0.0",
     "normalize.css": "^8.0.1",
     "youtube-player": "^5.5.2"
   },
