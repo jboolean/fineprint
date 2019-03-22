@@ -2,6 +2,7 @@ import YouTubePlayer from 'youtube-player';
 import 'core-js/es6/promise';
 import './index.css';
 import './videoHideShow.css';
+import 'classlist-polyfill';
 
 const youtubeIds = {
   forgiveness: 'IGZBsOPALDo',
