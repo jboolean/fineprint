@@ -1,0 +1,15 @@
+.videoContainer {
+  display: none;
+}
+
+.forgivenessShown .forgivenessContainer {
+  display: initial;
+}
+
+.hardshipShown .hardshipContainer {
+  display: initial;
+}
+
+.defaultShown .defaultContainer {
+  display: initial;
+}

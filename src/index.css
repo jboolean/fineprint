@@ -55,21 +55,9 @@ section#aboveFold {
   flex-grow: 0;
 }
 
-.videoHidden .videoContainer {
-  display: none;
-}
-
 .videoContainer {
   flex-grow: 1;
   position: relative;
-}
-
-.videoInnerContainer {
-  /* all this stuff ensures the video fits vertically
-  on wide screens */
-  max-width: calc(177vh - 100px);
-  width: 100%;
-  height: 100%;
 }
 
 #selector {
