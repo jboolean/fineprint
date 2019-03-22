@@ -1,14 +1,57 @@
+import YouTubePlayer from 'youtube-player';
+
 import './index.css';
 import './videoHideShow.css';
 
-const ids = ['forgiveness', 'hardship', 'default'];
+const youtubeIds = {
+  forgiveness: 'IGZBsOPALDo',
+  hardship: 'CmH1BH-iCcw',
+  default: 'JkxBccGqyXQ'
+}
+const ids = Object.keys(youtubeIds);
 
+const renderVideoPlayer = (id, youtubeId) => {
+  const titleNode = document.querySelector('#aboveFold h1');
+
+  const videoContainer = document.createElement('DIV');
+  videoContainer.className = `videoContainer centerContainer ${id}Container`;
+
+  const placeholder = document.createElement('DIV');
+  videoContainer.appendChild(placeholder);
+
+  titleNode.parentNode.insertBefore(videoContainer, titleNode);
+  
+  const player = new YouTubePlayer(placeholder, {
+    videoId: youtubeId,
+    width: '100%',
+    height: '100%',
+    playerVars: {
+      modestbranding: 1
+    }
+  });
+  return player;
+}
+
+let players;
+const createPlayers = () => {
+  players = {};
+  ids.forEach((id) => {
+    players[id] = renderVideoPlayer(id, youtubeIds[id]);
+  });
+};
+
+let activePlayer;
 const showVideo = (id) => {
   var aboveFold = document.getElementById('aboveFold');
   aboveFold.classList.remove('videoHidden');
   const shownClasses = ids.map((id) => id + 'Shown');
   aboveFold.classList.remove('videoHidden', ...shownClasses);
-  aboveFold.classList.add('videoVisible', id + 'Shown')
+  aboveFold.classList.add('videoVisible', id + 'Shown');
+  if (activePlayer) {
+    activePlayer.stopVideo();
+  }
+  players[id].playVideo();
+  activePlayer = players[id];
 }
 
 const addClassWhenAnimationEnded = (node, animationName) => {
@@ -30,5 +73,6 @@ const bind = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  createPlayers();
   bind();
 });
