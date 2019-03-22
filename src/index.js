@@ -1,5 +1,4 @@
 import YouTubePlayer from 'youtube-player';
-import 'core-js/features/promise'; // used by youtube
 
 import './index.css';
 import './videoHideShow.css';
