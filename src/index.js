@@ -1,5 +1,5 @@
 import YouTubePlayer from 'youtube-player';
-
+import 'core-js/es6/promise';
 import './index.css';
 import './videoHideShow.css';
 

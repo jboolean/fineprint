@@ -3,8 +3,10 @@
     [
       "@babel/preset-env",
       {
-        "useBuiltIns": "usage"
-      }
+        "useBuiltIns": "usage",
+        "corejs": 2,
+        "include": ["es6.promise"]
+      },
     ]
   ]
 }
