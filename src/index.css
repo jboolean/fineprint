@@ -129,7 +129,7 @@ section#aboveFold {
   vertical-align: middle;
 }
 
-.videoVisible #selector a, #selector:hover a {
+.videoVisible #selector a, #selector:hover a.fadeinEnded {
   opacity: 0.5;
   animation: none !important;
 }
