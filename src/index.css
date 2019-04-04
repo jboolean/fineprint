@@ -38,7 +38,7 @@ section {
 }
 
 section#aboveFold {
-  height: 0; /* hack for IE11 */
+  /*height: 0;*/ /* hack for IE11, that unfortunately breaks landscape mode phones */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -66,6 +66,7 @@ section#aboveFold {
 
 .videoContainer {
   flex-grow: 1;
+  flex-basis: 50vh; /* Grow doesn't work in IE so give it something so it's not 0 */
   position: relative;
 }
 
@@ -95,16 +96,17 @@ section#aboveFold {
   font-family: pragmatica-extended, Arial, sans-serif;
   font-weight: 700;
   font-style: normal;
-  /* scales font between 12px and 2 ems depending on screen size */
-  font-size: calc(12px + (32 - 12) * ((100vw - 300px) / (1600 - 300)));
+  /* scales font between 10px and 2 ems depending on screen size */
+  font-size: calc(10px + (32 - 10) * ((100vw - 300px) / (1600 - 300)));
 
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.videoHidden #selector > * {
+.videoHidden #selector > *, .videoHidden #selector img {
   height: 66px;
-  margin-bottom: 22px;
 }
+
 
 .videoVisible #selector {
   flex-direction: row;
