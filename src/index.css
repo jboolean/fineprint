@@ -77,12 +77,16 @@ section#aboveFold {
 
 #back {
   position: absolute;
-  left: 22px;
+  top: 0;
+  left: 0;
   background-image: url(./back.svg);
   background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: 50% 50%;
   font-size: 0;
-  height: 22px;
-  width: 22px;
+  height: 44px;
+  width: 44px;
+  padding: 11px;
   margin-bottom: 11px;
   filter: invert(100%);
   cursor: pointer;
@@ -96,6 +100,13 @@ section#aboveFold {
 
 .videoHidden #back {
   display: none;
+}
+
+@media screen and (max-width: 480px) {
+  /* back looks horrible on small screen */
+  #back {
+    display: none;
+  }
 }
 
 #selector {
