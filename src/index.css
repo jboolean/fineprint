@@ -75,6 +75,29 @@ section#aboveFold {
   position: absolute; /*needed by some browsers*/
 }
 
+#back {
+  position: absolute;
+  left: 22px;
+  background-image: url(./back.svg);
+  background-repeat: no-repeat;
+  font-size: 0;
+  height: 22px;
+  width: 22px;
+  margin-bottom: 11px;
+  filter: invert(100%);
+  cursor: pointer;
+
+  opacity: 0.5;
+}
+
+#back:hover {
+  opacity: 1;
+}
+
+.videoHidden #back {
+  display: none;
+}
+
 #selector {
   display: flex;
   flex-direction: column;

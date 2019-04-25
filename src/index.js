@@ -64,11 +64,24 @@ const addClassWhenAnimationEnded = (node, animationName) => {
   });
 };
 
+const hideVideo = () => {
+  if (activePlayer) {
+    activePlayer.stopVideo();
+  }
+
+  const aboveFold = document.getElementById('aboveFold');
+  const shownClasses = ids.map((vidId) => vidId + 'Shown');
+  aboveFold.classList.remove('videoVisible', ...shownClasses);
+  aboveFold.classList.add('videoHidden');
+};
+
 const bind = () => {
   ids.forEach((id) => {
     document.getElementById(id + 'Link')
       .addEventListener('click', () => showVideo(id));
   });
+  document.getElementById('back')
+    .addEventListener('click', hideVideo);
 
   addClassWhenAnimationEnded(document.getElementById('selector'), 'fadein');
 
